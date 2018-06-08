@@ -30,12 +30,12 @@ void NextPage(FILE *file, struct winsize *ws, int page) {
     int count = 0;
     while (count <= page) {
       system("clear");
-        char *newchar = malloc(sizeof(char) * (ws->ws_col + 1));
+        char *string  = malloc(sizeof(char) * (ws->ws_col + 1));
         for (int i = 0; i < ws->ws_row && !feof(file); i++) {
-            fgets(newchar, ws->ws_col, file);
-            printf("%s", newchar);
+            fgets(string , ws->ws_col, file);
+            printf("%s", string );
         }
-        free(newchar);
+        free(string );
 
         count++;
     }
